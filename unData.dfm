@@ -53,7 +53,50 @@ object dmData: TdmData
   object tbGames: TTable
     Active = True
     DatabaseName = 'catalog'
-    IndexFieldNames = 'Title'
+    FieldDefs = <
+      item
+        Name = 'Id'
+        Attributes = [faReadonly]
+        DataType = ftAutoInc
+      end
+      item
+        Name = 'Title'
+        DataType = ftString
+        Size = 255
+      end
+      item
+        Name = 'Publisher'
+        DataType = ftInteger
+      end
+      item
+        Name = 'Developer'
+        DataType = ftInteger
+      end
+      item
+        Name = 'Genre'
+        DataType = ftInteger
+      end
+      item
+        Name = 'Release'
+        DataType = ftDate
+      end
+      item
+        Name = 'Description'
+        DataType = ftMemo
+        Size = 128
+      end>
+    IndexDefs = <
+      item
+        Fields = 'Id'
+        Options = [ixPrimary, ixUnique]
+      end
+      item
+        Name = 'GameIndex'
+        Fields = 'Title'
+        Options = [ixCaseInsensitive]
+      end>
+    IndexName = 'GameIndex'
+    StoreDefs = True
     TableName = 'games.db'
     Left = 24
     Top = 104
@@ -131,6 +174,7 @@ object dmData: TdmData
   object tbFilterDevelopers: TTable
     Active = True
     DatabaseName = 'catalog'
+    IndexFieldNames = 'Company'
     TableName = 'companies.db'
     Left = 176
     Top = 8
@@ -146,6 +190,7 @@ object dmData: TdmData
   object tbFilterPublishers: TTable
     Active = True
     DatabaseName = 'catalog'
+    IndexFieldNames = 'Company'
     TableName = 'companies.db'
     Left = 176
     Top = 56
@@ -161,6 +206,7 @@ object dmData: TdmData
   object tbFilterGenres: TTable
     Active = True
     DatabaseName = 'catalog'
+    IndexFieldNames = 'Genre'
     TableName = 'genres.db'
     Left = 176
     Top = 104

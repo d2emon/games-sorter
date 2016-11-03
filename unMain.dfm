@@ -1,9 +1,9 @@
 object fmMain: TfmMain
   Left = 336
-  Top = 144
+  Top = 68
   Width = 829
-  Height = 559
-  Caption = 'fmMain'
+  Height = 635
+  Caption = #1048#1075#1088#1099
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,13 +17,13 @@ object fmMain: TfmMain
   object spFilter: TSplitter
     Left = 185
     Top = 33
-    Height = 468
+    Height = 544
   end
   object pnFilter: TPanel
     Left = 0
     Top = 33
     Width = 185
-    Height = 468
+    Height = 544
     Align = alLeft
     Caption = 'pnFilter'
     TabOrder = 0
@@ -114,12 +114,12 @@ object fmMain: TfmMain
     Left = 188
     Top = 33
     Width = 625
-    Height = 468
+    Height = 544
     Align = alClient
     TabOrder = 1
     object spDetail: TSplitter
       Left = 1
-      Top = 213
+      Top = 263
       Width = 623
       Height = 3
       Cursor = crVSplit
@@ -127,9 +127,9 @@ object fmMain: TfmMain
     end
     object pnDetail: TPanel
       Left = 1
-      Top = 216
+      Top = 266
       Width = 623
-      Height = 251
+      Height = 277
       Align = alBottom
       Caption = 'pnDetail'
       TabOrder = 0
@@ -137,13 +137,13 @@ object fmMain: TfmMain
         Left = 326
         Top = 1
         Width = 296
-        Height = 249
+        Height = 275
         Align = alRight
         Caption = 'Panel1'
         TabOrder = 0
         object DBNavigator1: TDBNavigator
           Left = 1
-          Top = 223
+          Top = 249
           Width = 294
           Height = 25
           DataSource = dmData.dsGames
@@ -199,7 +199,7 @@ object fmMain: TfmMain
           Left = 8
           Top = 104
           Width = 281
-          Height = 273
+          Height = 145
           DataField = 'Description'
           DataSource = dmData.dsGames
           TabOrder = 5
@@ -210,7 +210,7 @@ object fmMain: TfmMain
       Left = 1
       Top = 1
       Width = 623
-      Height = 212
+      Height = 262
       Align = alClient
       Caption = 'pnList'
       TabOrder = 1
@@ -218,7 +218,7 @@ object fmMain: TfmMain
         Left = 1
         Top = 1
         Width = 621
-        Height = 210
+        Height = 260
         Align = alClient
         DataSource = dmData.dsGames
         TabOrder = 0
