@@ -42,9 +42,19 @@ type
     DBLookupComboBox3: TDBLookupComboBox;
     DBRichEdit1: TDBRichEdit;
     DBGrid4: TDBGrid;
+    Filters1: TMenuItem;
+    miFilterDevelopers: TMenuItem;
+    miFilterPublishers: TMenuItem;
+    miFilterGenres: TMenuItem;
     procedure aCompaniesExecute(Sender: TObject);
     procedure aGenresExecute(Sender: TObject);
+    procedure miFilterDevelopersClick(Sender: TObject);
+    procedure DBGrid3Exit(Sender: TObject);
   private
+    FilterDevelopers: Boolean;
+    FilterPublishers: Boolean;
+    FilterGenres: Boolean;
+    procedure Filter;
     { Private declarations }
   public
     { Public declarations }
@@ -67,6 +77,31 @@ end;
 procedure TfmMain.aGenresExecute(Sender: TObject);
 begin
   fmGenres.Show;
+end;
+
+procedure TfmMain.Filter;
+begin
+  dmData.tbGames.Filter := '';
+  if fmMain.FilterDevelopers then
+    dmData.tbGames.Filter := 'Developer=''' + dmData.tbFilterDevelopersId.AsString + '''';
+  if fmMain.FilterPublishers then
+    dmData.tbGames.Filter := 'Publisher=''' + dmData.tbFilterPublishersId.AsString + '''';
+  if fmMain.FilterGenres then
+    dmData.tbGames.Filter := 'Genre=''' + dmData.tbFilterGenresId.AsString + '''';
+  dmData.tbGames.Filtered := True;
+end;
+
+procedure TfmMain.miFilterDevelopersClick(Sender: TObject);
+begin
+  fmMain.FilterDevelopers := miFilterDevelopers.Checked;
+  fmMain.FilterPublishers := miFilterPublishers.Checked;
+  fmMain.FilterGenres := miFilterGenres.Checked;
+  fmMain.Filter;
+end;
+
+procedure TfmMain.DBGrid3Exit(Sender: TObject);
+begin
+  fmMain.Filter;
 end;
 
 end.

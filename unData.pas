@@ -22,6 +22,21 @@ type
     tbGamesGenre: TIntegerField;
     tbGamesRelease: TDateField;
     tbGamesDescription: TMemoField;
+    tbFilterDevelopers: TTable;
+    tbFilterPublishers: TTable;
+    tbFilterGenres: TTable;
+    dsFilterDevelopers: TDataSource;
+    dsFilterPublishers: TDataSource;
+    dsFilterGenres: TDataSource;
+    tbGamesGenreName: TStringField;
+    tbGamesPublisherCompany: TStringField;
+    tbGamesDeveloperCompany: TStringField;
+    tbFilterDevelopersId: TAutoIncField;
+    tbFilterDevelopersCompany: TStringField;
+    tbFilterPublishersId: TAutoIncField;
+    tbFilterPublishersCompany: TStringField;
+    tbFilterGenresId: TAutoIncField;
+    tbFilterGenresGenre: TStringField;
   private
     { Private declarations }
   public

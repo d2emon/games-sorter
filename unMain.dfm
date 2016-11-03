@@ -1,8 +1,8 @@
 object fmMain: TfmMain
   Left = 336
   Top = 144
-  Width = 928
-  Height = 500
+  Width = 829
+  Height = 559
   Caption = 'fmMain'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,19 +17,19 @@ object fmMain: TfmMain
   object spFilter: TSplitter
     Left = 185
     Top = 33
-    Height = 409
+    Height = 468
   end
   object pnFilter: TPanel
     Left = 0
     Top = 33
     Width = 185
-    Height = 409
+    Height = 468
     Align = alLeft
     Caption = 'pnFilter'
     TabOrder = 0
     object Splitter1: TSplitter
       Left = 1
-      Top = 81
+      Top = 121
       Width = 183
       Height = 3
       Cursor = crVSplit
@@ -37,7 +37,7 @@ object fmMain: TfmMain
     end
     object Splitter2: TSplitter
       Left = 1
-      Top = 161
+      Top = 249
       Width = 183
       Height = 3
       Cursor = crVSplit
@@ -45,11 +45,11 @@ object fmMain: TfmMain
     end
     object DBGrid1: TDBGrid
       Left = 1
-      Top = 164
+      Top = 252
       Width = 183
-      Height = 85
+      Height = 125
       Align = alTop
-      DataSource = dmData.dsGenres
+      DataSource = dmData.dsFilterGenres
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -57,6 +57,7 @@ object fmMain: TfmMain
       TitleFont.Height = -11
       TitleFont.Name = 'MS Sans Serif'
       TitleFont.Style = []
+      OnExit = DBGrid3Exit
       Columns = <
         item
           Expanded = False
@@ -66,11 +67,11 @@ object fmMain: TfmMain
     end
     object DBGrid2: TDBGrid
       Left = 1
-      Top = 84
+      Top = 124
       Width = 183
-      Height = 77
+      Height = 125
       Align = alTop
-      DataSource = dmData.dsCompanies
+      DataSource = dmData.dsFilterPublishers
       ReadOnly = True
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
@@ -78,6 +79,7 @@ object fmMain: TfmMain
       TitleFont.Height = -11
       TitleFont.Name = 'MS Sans Serif'
       TitleFont.Style = []
+      OnExit = DBGrid3Exit
       Columns = <
         item
           Expanded = False
@@ -89,9 +91,9 @@ object fmMain: TfmMain
       Left = 1
       Top = 1
       Width = 183
-      Height = 80
+      Height = 120
       Align = alTop
-      DataSource = dmData.dsCompanies
+      DataSource = dmData.dsFilterDevelopers
       ReadOnly = True
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
@@ -99,6 +101,7 @@ object fmMain: TfmMain
       TitleFont.Height = -11
       TitleFont.Name = 'MS Sans Serif'
       TitleFont.Style = []
+      OnExit = DBGrid3Exit
       Columns = <
         item
           Expanded = False
@@ -110,41 +113,113 @@ object fmMain: TfmMain
   object pnMain: TPanel
     Left = 188
     Top = 33
-    Width = 428
-    Height = 409
+    Width = 625
+    Height = 468
     Align = alClient
     TabOrder = 1
     object spDetail: TSplitter
       Left = 1
-      Top = 293
-      Width = 426
+      Top = 213
+      Width = 623
       Height = 3
       Cursor = crVSplit
       Align = alBottom
     end
     object pnDetail: TPanel
       Left = 1
-      Top = 296
-      Width = 426
-      Height = 112
+      Top = 216
+      Width = 623
+      Height = 251
       Align = alBottom
       Caption = 'pnDetail'
       TabOrder = 0
+      object Panel1: TPanel
+        Left = 326
+        Top = 1
+        Width = 296
+        Height = 249
+        Align = alRight
+        Caption = 'Panel1'
+        TabOrder = 0
+        object DBNavigator1: TDBNavigator
+          Left = 1
+          Top = 223
+          Width = 294
+          Height = 25
+          DataSource = dmData.dsGames
+          Align = alBottom
+          TabOrder = 0
+        end
+        object DBEdit1: TDBEdit
+          Left = 144
+          Top = 8
+          Width = 145
+          Height = 21
+          DataField = 'Title'
+          DataSource = dmData.dsGames
+          TabOrder = 1
+        end
+        object DBLookupComboBox1: TDBLookupComboBox
+          Left = 144
+          Top = 32
+          Width = 145
+          Height = 21
+          DataField = 'Developer'
+          DataSource = dmData.dsGames
+          KeyField = 'Id'
+          ListField = 'Company'
+          ListSource = dmData.dsCompanies
+          TabOrder = 2
+        end
+        object DBLookupComboBox2: TDBLookupComboBox
+          Left = 144
+          Top = 56
+          Width = 145
+          Height = 21
+          DataField = 'Publisher'
+          DataSource = dmData.dsGames
+          KeyField = 'Id'
+          ListField = 'Company'
+          ListSource = dmData.dsCompanies
+          TabOrder = 3
+        end
+        object DBLookupComboBox3: TDBLookupComboBox
+          Left = 144
+          Top = 80
+          Width = 145
+          Height = 21
+          DataField = 'Genre'
+          DataSource = dmData.dsGames
+          KeyField = 'Id'
+          ListField = 'Genre'
+          ListSource = dmData.dsGenres
+          TabOrder = 4
+        end
+        object DBRichEdit1: TDBRichEdit
+          Left = 8
+          Top = 104
+          Width = 281
+          Height = 273
+          DataField = 'Description'
+          DataSource = dmData.dsGames
+          TabOrder = 5
+        end
+      end
     end
     object pnList: TPanel
       Left = 1
       Top = 1
-      Width = 426
-      Height = 292
+      Width = 623
+      Height = 212
       Align = alClient
       Caption = 'pnList'
       TabOrder = 1
       object DBGrid4: TDBGrid
         Left = 1
         Top = 1
-        Width = 424
-        Height = 272
-        Align = alTop
+        Width = 621
+        Height = 210
+        Align = alClient
         DataSource = dmData.dsGames
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
@@ -156,22 +231,25 @@ object fmMain: TfmMain
           item
             Expanded = False
             FieldName = 'Title'
-            Width = 161
+            Width = 128
             Visible = True
           end
           item
             Expanded = False
-            FieldName = 'Publisher'
+            FieldName = 'PublisherCompany'
+            Width = 128
             Visible = True
           end
           item
             Expanded = False
-            FieldName = 'Developer'
+            FieldName = 'DeveloperCompany'
+            Width = 128
             Visible = True
           end
           item
             Expanded = False
-            FieldName = 'Genre'
+            FieldName = 'GenreName'
+            Width = 128
             Visible = True
           end
           item
@@ -185,81 +263,9 @@ object fmMain: TfmMain
   object cbTools: TCoolBar
     Left = 0
     Top = 0
-    Width = 912
+    Width = 813
     Height = 33
     Bands = <>
-  end
-  object Panel1: TPanel
-    Left = 616
-    Top = 33
-    Width = 296
-    Height = 409
-    Align = alRight
-    Caption = 'Panel1'
-    TabOrder = 3
-    object DBNavigator1: TDBNavigator
-      Left = 1
-      Top = 383
-      Width = 294
-      Height = 25
-      DataSource = dmData.dsGames
-      Align = alBottom
-      TabOrder = 0
-    end
-    object DBEdit1: TDBEdit
-      Left = 144
-      Top = 8
-      Width = 145
-      Height = 21
-      DataField = 'Title'
-      DataSource = dmData.dsGames
-      TabOrder = 1
-    end
-    object DBLookupComboBox1: TDBLookupComboBox
-      Left = 144
-      Top = 32
-      Width = 145
-      Height = 21
-      DataField = 'Developer'
-      DataSource = dmData.dsGames
-      KeyField = 'Id'
-      ListField = 'Company'
-      ListSource = dmData.dsCompanies
-      TabOrder = 2
-    end
-    object DBLookupComboBox2: TDBLookupComboBox
-      Left = 144
-      Top = 56
-      Width = 145
-      Height = 21
-      DataField = 'Publisher'
-      DataSource = dmData.dsGames
-      KeyField = 'Id'
-      ListField = 'Company'
-      ListSource = dmData.dsCompanies
-      TabOrder = 3
-    end
-    object DBLookupComboBox3: TDBLookupComboBox
-      Left = 144
-      Top = 80
-      Width = 145
-      Height = 21
-      DataField = 'Genre'
-      DataSource = dmData.dsGames
-      KeyField = 'Id'
-      ListField = 'Genre'
-      ListSource = dmData.dsGenres
-      TabOrder = 4
-    end
-    object DBRichEdit1: TDBRichEdit
-      Left = 8
-      Top = 104
-      Width = 281
-      Height = 273
-      DataField = 'Description'
-      DataSource = dmData.dsGames
-      TabOrder = 5
-    end
   end
   object mmMain: TMainMenu
     Left = 8
@@ -274,6 +280,24 @@ object fmMain: TfmMain
       end
       object Exit1: TMenuItem
         Action = aFileExit
+      end
+    end
+    object Filters1: TMenuItem
+      Caption = '&Filters'
+      object miFilterDevelopers: TMenuItem
+        AutoCheck = True
+        Caption = '&Developers'
+        OnClick = miFilterDevelopersClick
+      end
+      object miFilterPublishers: TMenuItem
+        AutoCheck = True
+        Caption = '&Publishers'
+        OnClick = miFilterDevelopersClick
+      end
+      object miFilterGenres: TMenuItem
+        AutoCheck = True
+        Caption = '&Genres'
+        OnClick = miFilterDevelopersClick
       end
     end
     object Lookups1: TMenuItem
