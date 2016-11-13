@@ -1,4 +1,4 @@
-unit unGenres;
+unit unTheme;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Dialogs, DBCtrls, ExtCtrls, Grids, DBGrids;
 
 type
-  TfmGenres = class(TForm)
+  TfmTheme = class(TForm)
     DBGrid1: TDBGrid;
     Panel1: TPanel;
     DBNavigator1: TDBNavigator;
@@ -18,7 +18,7 @@ type
   end;
 
 var
-  fmGenres: TfmGenres;
+  fmTheme: TfmTheme;
 
 implementation
 

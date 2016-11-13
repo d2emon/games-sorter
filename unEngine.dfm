@@ -1,9 +1,9 @@
-object fmGenres: TfmGenres
-  Left = 897
-  Top = 165
-  Width = 262
+object fmEngine: TfmEngine
+  Left = 315
+  Top = 136
+  Width = 273
   Height = 341
-  Caption = 'Genres'
+  Caption = 'Engines'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,15 +11,16 @@ object fmGenres: TfmGenres
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 246
+    Width = 257
     Height = 262
     Align = alClient
-    DataSource = dmData.dsGenres
+    DataSource = dmData.dsEngine
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -29,14 +30,14 @@ object fmGenres: TfmGenres
     Columns = <
       item
         Expanded = False
-        FieldName = 'Genre'
+        FieldName = 'Engine'
         Visible = True
       end>
   end
   object Panel1: TPanel
     Left = 0
     Top = 262
-    Width = 246
+    Width = 257
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -45,7 +46,7 @@ object fmGenres: TfmGenres
       Top = 8
       Width = 240
       Height = 25
-      DataSource = dmData.dsGenres
+      DataSource = dmData.dsEngine
       TabOrder = 0
     end
   end

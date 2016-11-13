@@ -268,8 +268,7 @@ object fmMain: TfmMain
     Bands = <>
   end
   object mmMain: TMainMenu
-    Left = 8
-    Top = 8
+    Top = 16
     object File1: TMenuItem
       Caption = '&File'
       object Options1: TMenuItem
@@ -308,6 +307,18 @@ object fmMain: TfmMain
       object Genres1: TMenuItem
         Action = aGenres
       end
+      object Engines1: TMenuItem
+        Action = aEngines
+      end
+      object hemes1: TMenuItem
+        Action = aThemes
+      end
+      object Atmospheres1: TMenuItem
+        Action = aAtmospheres
+      end
+      object Plots1: TMenuItem
+        Action = aPlots
+      end
     end
   end
   object alActions: TActionList
@@ -332,6 +343,28 @@ object fmMain: TfmMain
       Category = 'Lookups'
       Caption = 'Genres'
       OnExecute = aGenresExecute
+    end
+    object aThemes: TAction
+      Category = 'Lookups'
+      Caption = 'Themes'
+      OnExecute = aThemesExecute
+    end
+    object aViews: TAction
+      Category = 'Lookups'
+      Caption = 'Views'
+    end
+    object aEngines: TAction
+      Category = 'Lookups'
+      Caption = 'Engines'
+      OnExecute = aEnginesExecute
+    end
+    object aAtmospheres: TAction
+      Category = 'Lookups'
+      Caption = 'Atmospheres'
+    end
+    object aPlots: TAction
+      Category = 'Lookups'
+      Caption = 'Plots'
     end
   end
 end

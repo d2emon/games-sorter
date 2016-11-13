@@ -37,6 +37,17 @@ type
     tbFilterPublishersCompany: TStringField;
     tbFilterGenresId: TAutoIncField;
     tbFilterGenresGenre: TStringField;
+    tbAtmosphere: TTable;
+    tbEngine: TTable;
+    tbPlot: TTable;
+    tbTheme: TTable;
+    tbView: TTable;
+    dsEngine: TDataSource;
+    tbEngineId: TAutoIncField;
+    tbEngineEngine: TStringField;
+    dsTheme: TDataSource;
+    tbThemeId: TAutoIncField;
+    tbThemeTheme: TStringField;
   private
     { Private declarations }
   public

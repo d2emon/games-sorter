@@ -46,10 +46,21 @@ type
     miFilterDevelopers: TMenuItem;
     miFilterPublishers: TMenuItem;
     miFilterGenres: TMenuItem;
+    aThemes: TAction;
+    aViews: TAction;
+    aEngines: TAction;
+    aAtmospheres: TAction;
+    aPlots: TAction;
+    Engines1: TMenuItem;
+    hemes1: TMenuItem;
+    Atmospheres1: TMenuItem;
+    Plots1: TMenuItem;
     procedure aCompaniesExecute(Sender: TObject);
     procedure aGenresExecute(Sender: TObject);
     procedure miFilterDevelopersClick(Sender: TObject);
     procedure DBGrid3Exit(Sender: TObject);
+    procedure aEnginesExecute(Sender: TObject);
+    procedure aThemesExecute(Sender: TObject);
   private
     FilterDevelopers: Boolean;
     FilterPublishers: Boolean;
@@ -65,7 +76,7 @@ var
 
 implementation
 
-uses unCompanies, unGenres, unData;
+uses unCompanies, unGenres, unData, unEngine, unTheme;
 
 {$R *.dfm}
 
@@ -102,6 +113,16 @@ end;
 procedure TfmMain.DBGrid3Exit(Sender: TObject);
 begin
   fmMain.Filter;
+end;
+
+procedure TfmMain.aEnginesExecute(Sender: TObject);
+begin
+  fmEngine.Show;  
+end;
+
+procedure TfmMain.aThemesExecute(Sender: TObject);
+begin
+  fmTheme.Show;
 end;
 
 end.

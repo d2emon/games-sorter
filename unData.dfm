@@ -2,7 +2,7 @@ object dmData: TdmData
   OldCreateOrder = False
   Left = 192
   Top = 124
-  Height = 317
+  Height = 434
   Width = 366
   object tbGenres: TTable
     Active = True
@@ -233,5 +233,63 @@ object dmData: TdmData
     DataSet = tbFilterGenres
     Left = 264
     Top = 104
+  end
+  object tbAtmosphere: TTable
+    DatabaseName = 'catalog'
+    TableName = 'atmosphere.db'
+    Left = 24
+    Top = 152
+  end
+  object tbEngine: TTable
+    Active = True
+    DatabaseName = 'catalog'
+    TableName = 'engine.db'
+    Left = 24
+    Top = 200
+    object tbEngineId: TAutoIncField
+      FieldName = 'Id'
+      ReadOnly = True
+    end
+    object tbEngineEngine: TStringField
+      FieldName = 'Engine'
+      Size = 64
+    end
+  end
+  object tbPlot: TTable
+    DatabaseName = 'catalog'
+    TableName = 'plot.db'
+    Left = 24
+    Top = 248
+  end
+  object tbTheme: TTable
+    Active = True
+    DatabaseName = 'catalog'
+    TableName = 'theme.db'
+    Left = 24
+    Top = 296
+    object tbThemeId: TAutoIncField
+      FieldName = 'Id'
+      ReadOnly = True
+    end
+    object tbThemeTheme: TStringField
+      FieldName = 'Theme'
+      Size = 64
+    end
+  end
+  object tbView: TTable
+    DatabaseName = 'catalog'
+    TableName = 'view.db'
+    Left = 24
+    Top = 344
+  end
+  object dsEngine: TDataSource
+    DataSet = tbEngine
+    Left = 96
+    Top = 200
+  end
+  object dsTheme: TDataSource
+    DataSet = tbTheme
+    Left = 104
+    Top = 296
   end
 end
